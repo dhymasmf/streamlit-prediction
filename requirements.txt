@@ -1,6 +1,6 @@
 streamlit==1.31.0
 pandas==2.2.3
-numpy==2.2.4
+numpy==1.26.4
 scikit-learn==1.6.1
 catboost==1.2.8
 category_encoders==2.8.1
