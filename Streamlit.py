@@ -19,7 +19,7 @@ st.set_page_config(
 )
 
 # Judul aplikasi
-st.title("🤖 Prediksi Langganan Deposito Berjangka")
+st.title("Prediksi Langganan Deposito Berjangka")
 st.markdown("---")
 
 # Sidebar untuk navigasi
@@ -96,7 +96,7 @@ poutcome_options = ['nonexistent', 'failure', 'success']
 pdays_group_options = ['never_contacted', 'contacted_before', 'recent']
 
 if page == "Prediksi":
-    st.header("🔮 Prediksi")
+    st.header("Prediksi")
     
     if model is None or transformer is None:
         st.error("Model atau preprocessor tidak berhasil dimuat. Pastikan file model dan transformer tersedia.")
@@ -108,7 +108,7 @@ if page == "Prediksi":
         col1, col2, col3 = st.columns(3)
 
         with col1:
-            st.markdown("### 📋 Informasi Pribadi")
+            st.markdown("### Informasi Pribadi")
             age = st.number_input("Umur (Age)", min_value=17, max_value=69, value=30)
             job = st.selectbox("Pekerjaan (Job)", options=job_options)
             marital = st.selectbox("Status Perkawinan (Marital)", options=marital_options)
@@ -117,7 +117,7 @@ if page == "Prediksi":
             loan = st.selectbox("Pinjaman Pribadi (Loan)", options=loan_options)
 
         with col2:
-            st.markdown("### 📞 Informasi Kampanye")
+            st.markdown("### Informasi Kampanye")
             contact = st.selectbox("Jenis Kontak (Contact)", options=contact_options)
             month = st.selectbox("Bulan Kontak (Month)", options=month_options)
             day_of_week = st.selectbox("Hari Kontak (Day of Week)", options=day_of_week_options)
@@ -127,7 +127,7 @@ if page == "Prediksi":
             pdays_group = st.selectbox("Kelompok Pdays (Pdays_group)", options=pdays_group_options)
 
         with col3:
-            st.markdown("### 🌍 Informasi Ekonomi Dunia")
+            st.markdown("### Informasi Ekonomi Dunia")
             emp_var_rate = st.number_input("Tingkat Variasi Ketenagakerjaan (Emp.var.rate)", 
                                         min_value=-3.4, max_value=1.4, value=1.1, step=0.1)
             cons_price_idx = st.number_input("Indeks Harga Konsumen (Cons.price.idx)", 
@@ -136,7 +136,7 @@ if page == "Prediksi":
                                             min_value=-50.8, max_value=-26.95, value=-36.4, step=0.1)
 
         # Prediksi tunggal
-        if st.button("🚀 Prediksi Tunggal", type="primary"):
+        if st.button("Prediksi Tunggal", type="primary"):
             try:
                 # Siapkan data input
                 input_data = pd.DataFrame({
@@ -192,7 +192,7 @@ if page == "Prediksi":
                 st.error(f"Error membuat prediksi: {e}")
 
         # Upload file untuk batch prediction
-        st.subheader("📁 Batch Prediction")
+        st.subheader("Batch Prediction")
         uploaded_file = st.file_uploader("Upload CSV file untuk prediksi batch", type=['csv'])
 
         if uploaded_file is not None:
@@ -230,7 +230,7 @@ if page == "Prediksi":
                 st.error(f"Error processing file: {e}")
 
 elif page == "Informasi Model":
-    st.header("📊 Informasi Model")
+    st.header("Informasi Model")
     
     col1, col2 = st.columns(2)
     
@@ -303,7 +303,7 @@ elif page == "Informasi Model":
         st.plotly_chart(fig, use_container_width=False)  # Matikan auto-width
 
 elif page == "Visualisasi Data":
-    st.header("📈 Visualisasi Data")
+    st.header("Visualisasi Data")
     
     # Load data asli
     try:
